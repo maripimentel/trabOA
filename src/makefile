@@ -9,10 +9,10 @@ LDIR =../lib
 GTESTLIBS = /usr/lib/libgtest.a -lgtest -lpthread
 LIBS=$(GTESTLIBS) 
 
-_DEPS = disk_lib.h 
+_DEPS = drive_lib.h 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = disk_test.o disk_code.o
+_OBJ = drive_test.o my_drive.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
