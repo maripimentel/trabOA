@@ -19,10 +19,11 @@ void show_menu () { // simples função que limpa a tela e mostra o menu.
   return;
 }
 
-void menu_selection (int menu_option) { // função que direciona o programa para as funções dependendo da opção escolhida.
+void menu_selection (int menu_option, track_array *cylinder) { // função que direciona o programa para as funções dependendo da opção escolhida.
 
   switch (menu_option){
     case 1:
+      write_file(*cylinder);
       break;
     case 2:
       break;
@@ -38,7 +39,12 @@ void menu_selection (int menu_option) { // função que direciona o programa par
   return;
 } 
 
+int write_file(track_array *cylinder){
+
+}
+
 int main (){
+  track_array *cylinder=NULL;
   int menu_option=0;
 
   show_menu;
@@ -47,12 +53,13 @@ int main (){
       &&(menu_option!=2)
       &&(menu_option!=3)
       &&(menu_option!=4)
-      &&(menu_option!=5)) { // garantia de entrada correta;
+      &&(menu_option!=5)) { // garantia de entrada correta.
     show_menu;
     printf("Escolha invalida!\nEntre novamente.\n");
     scanf("%d", &menu_option);
   }
-  menu_selection;
+  initialize_drive (); // PERGUNTAR PARA O PROFESSOR SOBRE A INICIALIZAÇÃO DAS ESTRUTURAS
+  menu_selection(menu_option, *cylinder);
 
 
 }
