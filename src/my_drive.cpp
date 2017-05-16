@@ -40,7 +40,16 @@ void menu_selection (int menu_option, track_array *cylinder) { // função que d
 } 
 
 int write_file(track_array *cylinder){
+  FILE *file = NULL;
+  char file_name[31];
 
+  do{
+    printf("Informe o nome do arquivo, inclua '.txt' no final.\n");
+    fgets(file_name, sizeof(file_name), stdin);
+    file=fopen(file_name, r);
+    clrscr;
+  while(file!=NULL);
+  printf("Arquivo aberto com sucesso.\n", );
 }
 
 int main (){
@@ -58,7 +67,6 @@ int main (){
     printf("Escolha invalida!\nEntre novamente.\n");
     scanf("%d", &menu_option);
   }
-  initialize_drive (); // PERGUNTAR PARA O PROFESSOR SOBRE A INICIALIZAÇÃO DAS ESTRUTURAS
   menu_selection(menu_option, *cylinder);
 
 
