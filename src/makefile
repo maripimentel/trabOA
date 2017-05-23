@@ -1,7 +1,7 @@
 IDIR =../include
 CC=g++
 EXT = cpp
-CFLAGS= -I $(IDIR) -Wall 
+CFLAGS= -I $(IDIR) -Wall -lm
 
 ODIR=obj
 LDIR =../lib
